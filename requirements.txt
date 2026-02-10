@@ -2,3 +2,4 @@ Flask
 pyTelegramBotAPI
 psutil
 requests
+python-dotenv
