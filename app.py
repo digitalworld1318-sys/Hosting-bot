@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 RAPIDAPI_KEY = os.environ.get('RAPIDAPI_KEY', 'fe08d9b938msh1c558193d437622p1f800ajsn8193b63f2a58')
 
-# Simple cache
 cache = {}
 CACHE_TTL_SECONDS = 3600
 
@@ -24,9 +23,9 @@ def get_gst_info():
             "message": "Missing 'id' parameter. Use ?id=27AAPFU0939F1ZV"
         }), 400
     
-    # Check cache
-    cached_data = None
+    # Cache check
     is_cached = False
+    cached_data = None
     if gst in cache:
         entry = cache[gst]
         if datetime.now() < entry['expiry']:
@@ -52,23 +51,21 @@ def get_gst_info():
         except Exception as e:
             api_response = {"success": False, "error": str(e)}
     
-    # Calculate response time
     response_time_ms = int((time.time() - start_time) * 1000)
     
-    # Prepare final response - avoid double data
+    # Extract inner data if API call succeeded
     if api_response.get('success', False):
-        # Extract inner data from API response
         gst_data = api_response.get('data', {})
+        # Build ordered dictionary (Python 3.7+ preserves order)
         final_response = {
             "status": "success",
             "code": 200,
-            "searched_gst-id": gst,
             "response_time": f"{response_time_ms}ms",
+            "searched_gst-id": gst,
             "cached": is_cached,
-            "success": True,  # API's success flag
-            "data": gst_data,  # Direct GST data, not nested again
-            "credit": "@DigitalWorld1318",
+            "data": gst_data,
             "Owner": "@Z4X_Silent_Boy",
+            "credit": "@DigitalWorld1318",
             "channel": "https://youtube.com/@digitalworld1318"
         }
         http_code = 200
@@ -76,13 +73,12 @@ def get_gst_info():
         final_response = {
             "status": "error",
             "code": 500,
-            "searched_gst-id": gst,
             "response_time": f"{response_time_ms}ms",
+            "searched_gst-id": gst,
             "cached": is_cached,
-            "success": False,
             "error": api_response.get('error', 'Unknown error'),
-            "credit": "@DigitalWorld1318",
             "Owner": "@Z4X_Silent_Boy",
+            "credit": "@DigitalWorld1318",
             "channel": "https://youtube.com/@digitalworld1318"
         }
         http_code = 500
