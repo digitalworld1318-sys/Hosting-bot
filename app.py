@@ -23,7 +23,6 @@ def get_gst_info():
             "message": "Missing 'id' parameter. Use ?id=27AAPFU0939F1ZV"
         }), 400
     
-    # Cache check
     is_cached = False
     cached_data = None
     if gst in cache:
@@ -53,10 +52,9 @@ def get_gst_info():
     
     response_time_ms = int((time.time() - start_time) * 1000)
     
-    # Extract inner data if API call succeeded
     if api_response.get('success', False):
         gst_data = api_response.get('data', {})
-        # Build ordered dictionary (Python 3.7+ preserves order)
+        # Order of keys will be preserved (Python 3.7+)
         final_response = {
             "status": "success",
             "code": 200,
@@ -84,6 +82,11 @@ def get_gst_info():
         http_code = 500
     
     return jsonify(final_response), http_code
+
+@app.route('/clear_cache', methods=['POST'])
+def clear_cache():
+    cache.clear()
+    return jsonify({"message": "Cache cleared successfully"})
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
