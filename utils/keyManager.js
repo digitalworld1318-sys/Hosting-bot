@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const KEYS_FILE = path.join(__dirname, '../database/keys.json');
-const PERMANENT_KEY = 'Z4X-Silent-Boy';
+const PERMANENT_KEY = 'Z4X-OWNER-Silent';
 
 let keysCache = null;
 
