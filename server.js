@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
   const jsonString = `{
   "𖣘 𝗔𝗣𝗜 𝗡𝗔𝗠𝗘 𖣘": "𖣘 𝗭𝟰𝗫 𝗡𝗘𝗪 𝗔𝗟𝗟-𝗜𝗡-𝗢𝗡𝗘 𝗔𝗣𝗜 𖣘",
 
-  "𖣘 𝗕𝗔𝗦𝗘 𝗔𝗣𝗜 𝗨𝗥𝗟 𖣘": "https://z4x-all-in-one-api.onrender.com",
+  "𖣘 𝗕𝗔𝗦𝗘 𝗔𝗣𝗜 𝗨𝗥𝗟 𖣘": "https://z4x-gst-info-api.onrender.com",
 
   "𖣘 𝗢𝗪𝗡𝗘𝗥 𖣘": "@Z4X_Silent_Boy",
 
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 
     "𖣘 𝗚𝗦𝗧 𖣘": {
       "❖ 𝗔𝗣𝗜 𝗘𝗡𝗗 𝗣𝗢𝗜𝗡𝗧 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 ❖": "/gst?key={Apka api key}&gst={GST number}",
-      "𖣘 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 𖣘": "/gst?key=Z4X-ZH3XWZDZ-Silent&gst=27AAPFU0939F1ZV"
+      "𖣘 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 𖣘": "/gst?key=Z4X-ZH3XWZDZ-Silent&gst=07AALCP1681Q1ZO"
     }
 }`;
   res.setHeader('Content-Type', 'application/json');
