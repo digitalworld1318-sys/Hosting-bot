@@ -21,6 +21,7 @@ const pincodeRoute = require('./routes/pincode');
 const ipinfoRoute = require('./routes/ipinfo');
 const vehicleRoute = require('./routes/vehicle');
 const challanRoute = require('./routes/challan');
+const gstRoute = require('./routes/gst');
 
 const { initializeKeyStore } = require('./utils/keyManager');
 
@@ -134,6 +135,11 @@ app.get('/', (req, res) => {
     "𖣘 𝗖𝗛𝗔𝗟𝗟𝗔𝗡 𖣘": {
       "❖ 𝗔𝗣𝗜 𝗘𝗡𝗗 𝗣𝗢𝗜𝗡𝗧 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 ❖": "/challan?key={Apka api key}&vehicle={vehicle number}",
       "𖣘 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 𖣘": "/challan?key=Z4X-ZH3XWZDZ-Silent&vehicle=UP70AJ2399"
+    },
+
+    "𖣘 𝗚𝗦𝗧 𖣘": {
+      "❖ 𝗔𝗣𝗜 𝗘𝗡𝗗 𝗣𝗢𝗜𝗡𝗧 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 ❖": "/gst?key={Apka api key}&gst={GST number}",
+      "𖣘 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 𖣘": "/gst?key=Z4X-ZH3XWZDZ-Silent&gst=27AAPFU0939F1ZV"
     }
   }
 }`;
@@ -159,6 +165,7 @@ app.use('/pincode', pincodeRoute);
 app.use('/ipinfo', ipinfoRoute);
 app.use('/vehicle', vehicleRoute);
 app.use('/challan', challanRoute);
+app.use('/gst', gstRoute);
 
 // 404 handler
 app.use((req, res) => {
