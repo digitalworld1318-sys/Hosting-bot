@@ -14,10 +14,10 @@ from telegram.ext import (
 from telethon import TelegramClient, errors, events
 
 # =================== CONFIG ===================
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8606888387:AAEPVs5__cMGR_TlQ-h0ncPbQZYZK9ZrHh8"
 OWNER_ID = 6698156001               # Owner's Telegram ID
-API_ID = 12345                      # From my.telegram.org
-API_HASH = "your_api_hash_here"
+API_ID = 30842203                      # From my.telegram.org
+API_HASH = "6b64dd14b635b99d5bb820448542f45b"
 
 SESSIONS_DIR = Path("sessions")
 SESSIONS_DIR.mkdir(exist_ok=True)
