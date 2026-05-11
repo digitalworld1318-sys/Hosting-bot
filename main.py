@@ -45,7 +45,7 @@ def keep_alive():
 # --- End Flask Keep Alive ---
 
 # --- Configuration FROM .env FILE ---
-TOKEN = os.getenv('TOKEN', '8448537925:AAEx9IDa9j26mKgpP1MFRWB2zW4VnwH4gGI')
+TOKEN = os.getenv('TOKEN', '8448537925:AAG1Fp6DUB7zx-ZMoLIiWbMXJTQ1tzatdVM')
 OWNER_ID = int(os.getenv('OWNER_ID', 6698156001))
 ADMIN_ID = int(os.getenv('ADMIN_ID', 6698156001))
 YOUR_USERNAME = os.getenv('YOUR_USERNAME', 'Z4X_Silent_Boy')
