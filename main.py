@@ -45,15 +45,15 @@ def keep_alive():
 # --- End Flask Keep Alive ---
 
 # --- Configuration FROM .env FILE ---
-TOKEN = os.getenv('TOKEN', '8487143796:AAF-GF3FJyXopUn2P2Yg4YZ9MkZ5E5kZDQA')
-OWNER_ID = int(os.getenv('OWNER_ID', 6698156001 ))
-ADMIN_ID = int(os.getenv('ADMIN_ID', 7278872449))
-YOUR_USERNAME = os.getenv('YOUR_USERNAME', '@Z4X_Silent_Boy1')
-UPDATE_CHANNEL = os.getenv('UPDATE_CHANNEL', '@DigitalWorld1318')
+TOKEN = os.getenv('TOKEN', '8448537925:AAEx9IDa9j26mKgpP1MFRWB2zW4VnwH4gGI')
+OWNER_ID = int(os.getenv('OWNER_ID', 6698156001))
+ADMIN_ID = int(os.getenv('ADMIN_ID', 6698156001))
+YOUR_USERNAME = os.getenv('YOUR_USERNAME', 'Z4X_Silent_Boy')
+UPDATE_CHANNEL = os.getenv('UPDATE_CHANNEL', '@DigitalWorld131')
 
 # Limits from .env or defaults
 FREE_USER_LIMIT = int(os.getenv('FREE_USER_LIMIT', 1))
-SUBSCRIBED_USER_LIMIT = int(os.getenv('SUBSCRIBED_USER_LIMIT', 5))
+SUBSCRIBED_USER_LIMIT = int(os.getenv('SUBSCRIBED_USER_LIMIT', 3))
 ADMIN_LIMIT = int(os.getenv('ADMIN_LIMIT', 20))
 OWNER_LIMIT = float('inf')
 
@@ -2808,7 +2808,7 @@ def _logic_help(message):
 2. Join all required channels
 3. Contact owner for subscription upgrades
 
-**Support:** @Z4X_Silent_Boy1
+**Support:** @Z4X_Silent_Boy
 **Updates:** @DigitalWorld1318
 """
     bot.reply_to(message, help_text, parse_mode='Markdown')
